@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 #from django.views.generic.base import TemplateView
-from ManageCompany.views import concesionaria_alta, concesionaria_modificacion, concesionaria_baja
+from ManageCompany import views as ManageCompanyViews
 from MiConcesionaria.views import home
 
 
@@ -26,7 +26,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     #path('', TemplateView.as_view(template_name='home.html'), name='home')
     path('',home),
-    path('concesionaria-alta',concesionaria_alta),
-    path('concesionaria-modificacion',concesionaria_modificacion),
-    path('concesionaria-baja',concesionaria_baja),
+    path('concesionaria-alta',ManageCompanyViews.concesionaria_alta),
+    path('concesionaria-modificacion',ManageCompanyViews.concesionaria_modificacion),
+    path('concesionaria-baja',ManageCompanyViews.concesionaria_baja),
 ]
