@@ -1,12 +1,13 @@
 from cgitb import html
+from multiprocessing import context
 from django.http import HttpResponse
-from django.template import Context, Template, loader
+from django.template import loader, Context
 
 def home(request):
     
     datos = {}
     
     plantilla = loader.get_template('home.html')
-    pagina = plantilla.render(datos)
+    pagina = plantilla.render(datos,request)
         
     return HttpResponse(pagina)

@@ -3,6 +3,12 @@ from django.http import HttpResponse
 from ManageCompany.models import Concesionaria,Empelado,Direccion
 
 # Create your views here.
+
+def ManageCompany(self):
+      
+    return HttpResponse(f'Portal de Administración de Empresas')
+
+
 def concesionaria_alta(self):
     
     concesionaria = Concesionaria(
