@@ -1,0 +1,11 @@
+<!-- templates/managecompany.html -->
+{% extends 'base.html' %}
+
+{% block title %} Gestión de Compañía {% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  Estás en el portal de Administración de Compañías
+{% endif %}
+{% endblock %}

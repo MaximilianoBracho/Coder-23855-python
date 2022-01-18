@@ -1,7 +1,5 @@
-from cgitb import html
-from multiprocessing import context
 from django.http import HttpResponse
-from django.template import loader, Context
+from django.template import loader
 
 def home(request):
     

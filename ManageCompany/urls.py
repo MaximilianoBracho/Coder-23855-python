@@ -1,9 +1,8 @@
 from django.urls import path
-from ManageCompany.models import Concesionaria,Empelado,Direccion
 from ManageCompany import views
 
 urlpatterns = [
-    path('',views.ManageCompany),
+    path('',views.managecompany),
     path('concesionaria-alta/',views.concesionaria_alta),
     path('concesionaria-modificacion/',views.concesionaria_modificacion),
     path('concesionaria-baja/',views.concesionaria_baja),

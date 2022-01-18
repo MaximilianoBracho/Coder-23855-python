@@ -1,12 +1,17 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 from ManageCompany.models import Concesionaria,Empelado,Direccion
 
 # Create your views here.
 
-def ManageCompany(self):
+def managecompany(request):
+    
+    datos = {}
+    
+    plantilla = loader.get_template('managecompany/managecompany.html')
+    pagina = plantilla.render(datos,request)
       
-    return HttpResponse(f'Portal de Administración de Empresas')
+    return HttpResponse(pagina)
 
 
 def concesionaria_alta(self):
