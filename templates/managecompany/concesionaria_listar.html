@@ -1,0 +1,46 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Lista de Concesionarias{% endblock %}
+
+{% block content %}
+
+    <table>
+        <tr>
+            <th>ConcesionariaId</th>
+            <th>CUIT</th>
+            <th>Razón Social</th>
+            <th>Marca</th>
+            <th>Inscripción</th>
+            <th>Dirección Fiscal</th>
+            <th>Dirección Envío</th>
+            <th>Telefono</th>
+            <th>Email</th>
+            <th>Alta</th>
+            <th>Estado</th>
+        </tr>
+        {% for c in concesionarias %}
+            <tr>    
+                <td>{{c.id}}</td>
+                <td>{{c.cuit}}</td>
+                <td>{{c.razon_social}}</td>
+                <td>{{c.nombre_fantasia}}</td>
+                <td>{{c.fecha_inscripción}}</td>
+                <td>{{c.direccion_fiscal}}</td>
+                <td>{{c.direccion_envio}}</td>
+                <td>{{c.telefono}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.fecha_creacion}}</td>
+                <td>{{c.estado}}</td>
+                <td><button><a href="{% url 'Editar Concesionaria' c.id %}">Editar</a></button></td>
+                <td><button><a href="{% url 'Eliminar Concesionaria' c.id %}">Eliminar</a></button></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <p><a href="{% url 'Alta de Concesionaria' %}">Alta Concesionaria</a></p>
+
+{% endblock %}
+
+

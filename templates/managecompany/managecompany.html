@@ -7,5 +7,9 @@
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
   Estás en el portal de Administración de Compañías
+
+  <p><a href="{% url 'Ver Concesionarias' %}">Ver Concesionarias</a></p>
+  <p><a href="{% url 'Ver Empleados' %}">Ver Empleados</a></p>
+  <p><a href="{% url 'Ver Direcciones' %}">Ver Direcciones</a></p>
 {% endif %}
 {% endblock %}

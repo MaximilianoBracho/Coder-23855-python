@@ -1,0 +1,44 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Lista de Empleados{% endblock %}
+
+{% block content %}
+
+    <table>
+        <tr>
+            <th>CUIL</th>
+            <th>DNI</th>
+            <th>Nombre y Apellido</th>
+            <th>Nacimiento</th>
+            <th>Domicilio</th>
+            <th>Telefono</th>
+            <th>Celular</th>
+            <th>Cargo</th>
+            <th>Email</th>
+            <th>Concesionaria N°</th>
+            <th>Alta</th>
+        </tr>
+        {% for e in empleados %}
+            <tr>    
+                <td>{{e.cuil}}</td>
+                <td>{{e.dni}}</td>
+                <td>{{e.nombres}},{{e.apellidos}}</td>
+                <td>{{e.fecha_nacimiento}}</td>
+                <td>{{e.domicilio}}</td>
+                <td>{{e.telefono}}</td>
+                <td>{{e.celular}}</td>
+                <td>{{e.cargo}}</td>
+                <td>{{e.email}}</td>
+                <td>{{e.companiaId}}</td>
+                <td>{{e.fecha_creacion}}</td>
+                <td><button><a href="{% url 'Editar Empleado' e.id %}">Editar</a></button></td>
+                <td><button><a href="{% url 'Eliminar Empleado' e.id %}">Eliminar</a></button></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <p><a href="{% url 'Alta de Empleado' %}">Alta de Empleados</a></p>
+
+{% endblock %}

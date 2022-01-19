@@ -1,0 +1,19 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %} Alta de Direcciones {% endblock %}
+
+{% block content %}
+
+<form action ="{% url 'Alta de Dirección' %}" method="POST">{% csrf_token %}
+
+    <table>
+        
+        {{form.as_table}}
+
+    </table>
+
+    <input type="submit", value="Enviar">
+</form>
+
+{% endblock %}

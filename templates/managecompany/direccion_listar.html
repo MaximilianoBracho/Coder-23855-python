@@ -1,0 +1,30 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Lista de Direcciones{% endblock %}
+
+{% block content %}
+
+    <table>
+        <tr>
+            <th>País</th>
+            <th>Pronvicia</th>
+            <th>Ciudad</th>
+            <th>Código Postal</th>
+        </tr>
+        {% for d in direcciones %}
+            <tr>    
+                <td>{{d.pais}}</td>
+                <td>{{d.provincia}}</td>
+                <td>{{d.ciudad}}</td>
+                <td>{{d.codigo_postal}}</td>
+                <td><button><a href="{% url 'Editar Dirección' d.id %}">Editar</a></button></td>
+                <td><button><a href="{% url 'Eliminar Dirección' d.id %}">Eliminar</a></button></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <p><a href="{% url 'Alta de Dirección' %}">Alta Direcciones</a></p>
+
+{% endblock %}
