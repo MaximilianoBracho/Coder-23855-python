@@ -2,7 +2,6 @@
 Repositorio de Proyecto Final de Camada 23855 de Python
 
 Integrantes:
- - Morena Avellina | DNI 39.852.865
  - Maximiliano Bracho | DNI 34.433.679
 
 
